@@ -12,8 +12,7 @@ async def on_ready():
 async def hello(ctx):
     await ctx.send(f'Hola, soy un {bot.user} y fui creado para dar consejos de la contaminacion!')
 
-
-consejo = [
+datos = [
     'Usa bolsas reutilizables para tus compras',
     'Evita los productos de un solo uso como sorbetes y cubiertos de plastico',
     'opta por caminar, andar en bicicleta o trasporte publico en lugar de conducir solo un automovil',
@@ -21,7 +20,7 @@ consejo = [
     'cierra el grifo mientras lavas los platos, te cepilles los dientes o enjabones en la ducha para ahorrar agua',
 ]
 @bot.command()
-async def consejodeldia(ctx):
+async def datos(ctx):
     consejo = random.choice(consejo)
     await ctx.send(consejo)
 
@@ -32,13 +31,13 @@ async def contaminacion(ctx):
     await ctx.send(definicion)
 
 materiales = {
-    'platico': random.randint(100, 1000), #Tiempo de degradación de 100 y 1000 años
-    'neumatico': random.randint(500, 1000),  
+    'platico': random.randint(100,1000), #Tiempo de degradación de 100 y 1000 años
+    'neumatico': random.randint(500,1000),  
     'Metal': random.randint(20,90),  
-    'Vidrio': random.randint(4000), 
+    'Vidrio': random.randint(0,4000), 
 }
 bot.command()
-async def consejodeldia(ctx):
+async def materiales(ctx):
     consejo = random.choice(materiales)
     await ctx.send(consejo)
 
